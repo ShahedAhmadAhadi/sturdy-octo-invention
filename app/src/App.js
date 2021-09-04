@@ -1,7 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import auth from './firebase/firebase.utils';
 
 function App() {
+
+  const [currentUser, setCurrentUser] = useState('')
+
+  useEffect(() => {
+    auth.OnAuthStateChanged(user => {setCurrentUser(user)})
+    console.log(user)
+    return () => {}
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
