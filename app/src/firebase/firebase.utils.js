@@ -16,7 +16,7 @@ initializeApp(config);
 
 export const auth = getAuth();
 
-const provider = new auth.GoogleAuthProvider();
+const provider = new GoogleAuthProvider();
 provider.setCustomParameters({promp: 'select_account'});
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, userEffect } from 'react';
 // import { signInWithGoogle } from '../firebase/firebase.utils';
 
-function signIn() {
+function SignIn() {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
