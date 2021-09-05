@@ -4,7 +4,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import auth from './firebase/firebase.utils';
 import { Router } from 'react-router-dom';
-import signIn from './components/signIn'
+import SignIn from './components/signIn'
 
 function App() {
 
@@ -32,7 +32,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <signIn />
+      <SignIn />
     </div>
   );
 }

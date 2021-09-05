@@ -7,18 +7,18 @@ function signIn() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    handleSubmit = e => {
+    let handleSubmit = e => {
         e.preventDefault();
 
         setEmail('')
         setPassword('')
     }
 
-    handleChangeEmail = event => {
+    const handleChangeEmail = event => {
         const value = event.target
         setEmail(value)
     }
-    handleChangePassword = event => {
+    const handleChangePassword = event => {
         const value = event.target
         setPassword(value)
     }
@@ -34,4 +34,4 @@ function signIn() {
     )
 }
 
-export default signIn
+export default SignIn
