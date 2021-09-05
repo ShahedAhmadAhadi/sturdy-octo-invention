@@ -26,7 +26,7 @@ function signIn() {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={() => handleSubmit()}>
             <input type="text" value={email} required placeholder="E-mail" onChange={handleChangeEmail} />
             <input type="password" value={password} required placeholder="password" onChange={handleChangePassword} />
             <input type="submit" value="Submit"/>
