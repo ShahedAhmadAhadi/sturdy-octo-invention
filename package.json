@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "firebase": "^9.0.1",
-    "yarn": "^1.22.11"
-  }
-}
