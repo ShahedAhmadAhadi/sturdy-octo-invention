@@ -14,10 +14,10 @@ const config = {
 
 initializeApp(config);
 
-export const auth = getAuth();
+const auth = getAuth();
 
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({promp: 'select_account'});
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const signInWithGoogle = () => signInWithPopup(auth, provider);
 
 // export default firebase;

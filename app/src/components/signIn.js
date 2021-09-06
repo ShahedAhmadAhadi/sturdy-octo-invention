@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, userEffect } from 'react';
-// import { signInWithGoogle } from '../firebase/firebase.utils';
+import { signInWithGoogle } from '../firebase/firebase.utils';
 
 function SignIn() {
 
@@ -30,6 +30,7 @@ function SignIn() {
             <input type="text" value={email} required placeholder="E-mail" onChange={handleChangeEmail} />
             <input type="password" value={password} required placeholder="password" onChange={handleChangePassword} />
             <input type="submit" value="Submit"/>
+            <input type="submit" onClick={signInWithGoogle} value="Sign with google"/>
         </form>
     )
 }
