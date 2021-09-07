@@ -18,6 +18,23 @@ const auth = getAuth();
 
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({promp: 'select_account'});
-export const signInWithGoogle = () => signInWithPopup(auth, provider);
+export const signInWithGoogle = () => signInWithPopup(auth, provider)
+// .then((result) => {
+//     const credential = GoogleAuthProvider.credentialFromResult(result);
+//     console.log(credential)
+//     // const token = credential.accessToken;
+//     // // The signed-in user info.
+//     // const user = result.user;
+//     // ...
+//   }).catch((error) => {
+//     // Handle Errors here.
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     // The email of the user's account used.
+//     const email = error.email;
+//     // The AuthCredential type that was used.
+//     const credential = GoogleAuthProvider.credentialFromError(error);
+//     // ...
+//   });
 
 // export default firebase;
