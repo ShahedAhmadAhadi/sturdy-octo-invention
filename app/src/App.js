@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import auth from './firebase/firebase.utils';
+import { auth } from './firebase/firebase.utils';
 import { Router } from 'react-router-dom';
 import SignIn from './components/signIn'
 
@@ -10,11 +10,10 @@ function App() {
 
   const [currentUser, setCurrentUser] = useState('')
 
-  // useEffect(() => {
-  //   auth.OnAuthStateChanged(user => {setCurrentUser(user)})
-  //   console.log(user)
-  //   return () => {}
-  // }, [])
+  useEffect(() => {
+    auth.onAuthStateChanged(user => {setCurrentUser(user)
+    console.log(user)})
+  }, [])
 
   return (
     <div className="App">

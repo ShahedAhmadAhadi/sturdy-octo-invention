@@ -14,7 +14,7 @@ const config = {
 
 initializeApp(config);
 
-const auth = getAuth();
+export const auth = getAuth();
 
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({promp: 'select_account'});
