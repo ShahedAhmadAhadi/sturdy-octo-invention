@@ -6,6 +6,7 @@ import { auth } from './firebase/firebase.utils';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import SignIn from './components/signIn';
 import Main from './components/main';
+import Header from './components/header'
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
         </a>
       </header> */}
       <Switch>
+        <Header />
         <Route exact path="/" component={Main} ></Route>
         <Route exact path="/sign" component={SignIn} ></Route>
       </Switch>
