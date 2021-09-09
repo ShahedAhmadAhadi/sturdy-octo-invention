@@ -33,11 +33,9 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <Switch>
         <Header />
         <Route exact path="/" component={Main} ></Route>
         <Route exact path="/sign" component={SignIn} ></Route>
-      </Switch>
     </div>
   );
 }
