@@ -3,7 +3,7 @@ import './App.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { auth } from './firebase/firebase.utils';
-import { Route } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import SignIn from './components/signIn';
 import Main from './components/main';
 
@@ -32,8 +32,10 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <Route exact path="/" component={Main} ></Route>
-      <Route exact path="/sign" component={SignIn} ></Route>
+      <Switch>
+        <Route exact path="/" component={Main} ></Route>
+        <Route exact path="/sign" component={SignIn} ></Route>
+      </Switch>
     </div>
   );
 }
