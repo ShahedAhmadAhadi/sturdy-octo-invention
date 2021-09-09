@@ -3,8 +3,9 @@ import './App.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { auth } from './firebase/firebase.utils';
-import { Router } from 'react-router-dom';
-import SignIn from './components/signIn'
+import { Route } from 'react-router-dom';
+import SignIn from './components/signIn';
+import Main from './components/main';
 
 function App() {
 
@@ -31,7 +32,8 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <SignIn />
+      <Route exact path="/" component={Main} ></Route>
+      <Route exact path="/sign" component={SignIn} ></Route>
     </div>
   );
 }
