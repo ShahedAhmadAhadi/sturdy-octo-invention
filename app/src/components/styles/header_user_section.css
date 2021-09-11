@@ -14,9 +14,9 @@
 }
 
 .image-container{
-    height: 1.3rem;
-    width: 1.3rem;
-    margin: 10px;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 1px 1px 1px 5px;
 }
 
 .user-image{
