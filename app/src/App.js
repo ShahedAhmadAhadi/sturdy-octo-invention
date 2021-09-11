@@ -41,7 +41,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-        <Header isUser={currentUser} signOut={() => signOut()} />
+        <Header user={currentUser} signOut={() => signOut()} />
         <Route exact path="/" component={Main} ></Route>
         <Route exact path="/sign" component={SignIn} ></Route>
     </div>
