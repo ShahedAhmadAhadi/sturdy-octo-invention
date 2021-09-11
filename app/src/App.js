@@ -6,16 +6,24 @@ import { auth } from './firebase/firebase.utils';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import SignIn from './components/signIn';
 import Main from './components/main';
-import Header from './components/header'
+import Header from './components/header';
+
 
 function App() {
 
   const [currentUser, setCurrentUser] = useState('')
 
+
   useEffect(() => {
     auth.onAuthStateChanged(user => {setCurrentUser(user)
     console.log(user)})
   }, [])
+
+  const signOut = () => {
+    auth.signOut()
+    setCurrentUser(null)
+    console.log('signout')
+  }
 
   return (
     <div className="App">
@@ -33,7 +41,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-        <Header isUser={currentUser} />
+        <Header isUser={currentUser} signOut={() => signOut()} />
         <Route exact path="/" component={Main} ></Route>
         <Route exact path="/sign" component={SignIn} ></Route>
     </div>
