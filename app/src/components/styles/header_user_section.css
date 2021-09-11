@@ -1,0 +1,13 @@
+.child{
+    color: #222;
+    text-decoration: none;
+    margin: 0;
+    font-weight: 500;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    text-transform: initial;
+}
+
+.child:hover{
+    color: #44b;
+}
