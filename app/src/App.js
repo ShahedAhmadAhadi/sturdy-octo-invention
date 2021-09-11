@@ -33,7 +33,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-        <Header />
+        <Header isUser={currentUser} />
         <Route exact path="/" component={Main} ></Route>
         <Route exact path="/sign" component={SignIn} ></Route>
     </div>
