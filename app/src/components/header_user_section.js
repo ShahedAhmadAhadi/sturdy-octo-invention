@@ -8,7 +8,8 @@ function UserSection(props) {
 
     return (
         <div className="child">
-            {props.user.displayName}
+            <span>{props.user.displayName}</span>
+            <span className="image-container"><img src={props.user.photoURL} className="user-image" /></span>
         </div>
     )
 }
