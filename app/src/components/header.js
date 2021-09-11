@@ -6,12 +6,12 @@ function Header() {
     return (
         <div className="wrapper">
             <h1 className="header">
-            To-Do
+            Logo
             </h1>
             <div className="list">
-            <NavLink to="/" activeClassName="">Home</NavLink>
-            <NavLink to="/" activeClassName="">Sign</NavLink>
-            <NavLink to="/" activeClassName="">Home</NavLink>
+            <NavLink to="/" activeClassName="active-link">Home</NavLink>
+            <NavLink to="/sign" activeClassName="active-link">Sign</NavLink>
+            <NavLink to="l" activeClassName="active-link">Link</NavLink>
             </div>
 
         </div>
