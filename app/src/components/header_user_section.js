@@ -1,6 +1,7 @@
 import React from 'react'
 import {child} from './styles/header_user_section.css'
 import { FaCaretDown } from 'react-icons/fa'
+import UserDropdown from './user_func_dropdown'
 
 
 function UserSection(props) {
@@ -14,6 +15,7 @@ function UserSection(props) {
             <span className="name-container">{sliceDisplayName}</span>
             <span className="image-container"><img src={props.user.photoURL} className="user-image" /></span>
             <span className="caret-container"><FaCaretDown /></span>
+            <UserDropdown user={props.user} />
         </div>
     )
 }
