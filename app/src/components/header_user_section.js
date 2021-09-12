@@ -7,11 +7,13 @@ function UserSection(props) {
 
     console.log(props.user.displayName + "user_section")
 
+    let sliceDisplayName = props.user.displayName.slice(0, 6)
+
     return (
         <div className="child">
-            <span>{props.user.displayName}</span>
+            <span className="name-container">{sliceDisplayName}</span>
             <span className="image-container"><img src={props.user.photoURL} className="user-image" /></span>
-            <span><FaCaretDown /></span>
+            <span className="caret-container"><FaCaretDown /></span>
         </div>
     )
 }
