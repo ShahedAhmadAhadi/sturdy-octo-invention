@@ -22,7 +22,7 @@ function Header(props) {
                 {/* {props.user && <a className="link" onClick={() => props.signOut()}>Sign Out</a>} */}
                 {props.user && <UserSection user={props.user} dropdownToggle={() => setDropdownToggle(!dropdownToggle)}></UserSection>}
                 {!props.user && <NavLink to="/sign" activeClassName="active-link" className="link">sign In</NavLink>}
-                {dropdownToggle && <UserDropdown user={props.user} />}
+                {dropdownToggle && <UserDropdown user={props.user} signOut={props.signOut} dropdownToggle={()=> setDropdownToggle(!dropdownToggle)} />}
 
             </div>
             
