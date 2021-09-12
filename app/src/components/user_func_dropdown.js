@@ -6,12 +6,12 @@ function UserDropdown(props) {
     return (
         <div className='dropdown'>
 
-        <ul className="list">
+        <ul className="dropdown-list dropdown-list-up">
             <li>{props.user.displayName}</li>
 
         </ul>
-        <ul className="list">
-            <li onClick={()=> {props.dropdownToggle() ;props.signOut();}}>Sign Out</li>
+        <ul className="dropdown-list">
+            <li onClick={()=> {props.dropdownToggle() ;props.signOut();}} className="list-item">Sign Out</li>
 
         </ul>
         </div>

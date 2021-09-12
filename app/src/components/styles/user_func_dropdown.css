@@ -4,12 +4,26 @@
     right: 3%;
     background-color: black;
     color: white;
-    padding: 1em;
     border-radius: 5px;
+    /* border: 1px solid #666; */
+    box-shadow: 2px 2px 3px gray;
 }
-.list{
+.dropdown-list{
     list-style-type: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+}
+
+.dropdown-list-up{
     border-bottom: 1px solid #555;
+}
+
+.list-item{
+    padding: 1em;
+    cursor: pointer;
+}
+
+.list-item:hover{
+    background-color: #44b;
+
 }

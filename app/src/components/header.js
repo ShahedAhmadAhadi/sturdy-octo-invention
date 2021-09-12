@@ -7,7 +7,7 @@ import {useState} from 'react'
 
 function Header(props) {
 
-    const [dropdownToggle, setDropdownToggle] = useState(true)
+    const [dropdownToggle, setDropdownToggle] = useState(false)
 
     console.log(dropdownToggle)
 
