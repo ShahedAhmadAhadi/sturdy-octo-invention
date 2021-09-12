@@ -15,7 +15,6 @@ function UserSection(props) {
             <span className="name-container">{sliceDisplayName}</span>
             <span className="image-container"><img src={props.user.photoURL} className="user-image" /></span>
             <span className="caret-container"><FaCaretDown /></span>
-            <UserDropdown user={props.user} />
         </div>
     )
 }

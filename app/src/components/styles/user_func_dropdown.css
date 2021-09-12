@@ -1,0 +1,10 @@
+.dropdown{
+    position: absolute;
+    list-style-type: none;
+    top: 5%;
+    right: 2.5%;
+    background-color: black;
+    color: white;
+    padding: 1em;
+    border-radius: 5px;
+}
