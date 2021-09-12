@@ -16,8 +16,8 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged(user => {setCurrentUser(user)
-    console.log(user)})
-  }, [])
+    })
+  }, [currentUser])
 
   const signOut = () => {
     auth.signOut()
