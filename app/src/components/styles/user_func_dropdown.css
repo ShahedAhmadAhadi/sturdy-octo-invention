@@ -5,25 +5,30 @@
     background-color: black;
     color: white;
     border-radius: 5px;
-    /* border: 1px solid #666; */
+    border: 1px solid #666;
     box-shadow: 2px 2px 3px gray;
 }
 .dropdown-list{
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0.5em 0;
+    text-transform: initial;
+    border-radius: 5px;
+    border-bottom: 1px solid #666;
+    font-size: 0.78rem;
+    text-align: left;
 }
 
-.dropdown-list-up{
-    border-bottom: 1px solid #555;
+.list-item-0{
+    padding: 1em 4em 1em 1em;
 }
 
-.list-item{
-    padding: 1em;
+.list-item-1{
+    padding: 0.3em 4em 0.3em 1em;
     cursor: pointer;
 }
 
-.list-item:hover{
-    background-color: #44b;
-
+.list-item-1:hover{
+    background-color: #1179da;
+    font-weight: 600;
 }
