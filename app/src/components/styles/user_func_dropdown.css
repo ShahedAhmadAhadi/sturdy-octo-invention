@@ -2,7 +2,7 @@
     position: absolute;
     top: 7%;
     right: 3%;
-    background-color: black;
+    background-color: #161b22;
     color: white;
     border-radius: 5px;
     border: 1px solid #666;
@@ -15,7 +15,7 @@
     text-transform: initial;
     border-radius: 5px;
     border-bottom: 1px solid #666;
-    font-size: 0.78rem;
+    font-size: 14px;
     text-align: left;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .list-item-1{
-    padding: 0.3em 4em 0.3em 1em;
+    padding: 0.5em 4em 0.5em 1em;
     cursor: pointer;
 }
 
