@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { onSnapshot } from '@firebase/firestore';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import SignIn from './components/signIn';
 import Main from './components/main';
@@ -15,9 +16,21 @@ function App() {
 
 
   useEffect(() => {
-    auth.onAuthStateChanged(async user => {
-      setCurrentUser(user)
-      createUserProfileDocument(user)
+    auth.onAuthStateChanged(async userAuth => {
+      // setCurrentUser(userAuth)
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        onSnapshot(userRef, (snapShot) => {
+          setCurrentUser({id:snapShot.id, ...snapShot.data()})
+        })
+        // userRef.(snapShot => {
+        //   console.log(snapShot)
+        // })
+        console.log(currentUser)
+      }
+      // setCurrentUser(user)
+      // createUserProfileDocument(user)
     })
   }, [])
 
