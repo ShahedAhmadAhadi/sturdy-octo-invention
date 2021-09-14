@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import SignIn from './components/signIn';
 import Main from './components/main';
@@ -15,7 +15,9 @@ function App() {
 
 
   useEffect(() => {
-    auth.onAuthStateChanged(user => {setCurrentUser(user)
+    auth.onAuthStateChanged(async user => {
+      createUserProfileDocument(user)
+      // setCurrentUser(user)
     })
   }, [currentUser])
 

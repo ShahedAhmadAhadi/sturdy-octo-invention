@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
-import 'firebase/firestore';
+import {collection, doc, getFirestore} from 'firebase/firestore';
 import { GoogleAuthProvider,getAuth, signInWithPopup } from 'firebase/auth';
+import { async } from '@firebase/util';
 
 const config = {
     apiKey: "AIzaSyAcj01rFFLGXMo9OSjRvQA-o1Vk8HGAziM",
@@ -13,6 +14,16 @@ const config = {
 }
 
 initializeApp(config);
+
+const db = getFirestore()
+
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+    if(!userAuth) return;
+
+    const users = collection(db, 'users')
+
+    console.log(doc(users, 'slkjSF2'))
+}
 
 export const auth = getAuth();
 
