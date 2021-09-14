@@ -14,6 +14,12 @@ const config = {
 
 initializeApp(config);
 
+export const auth = getAuth();
+
+const provider = new GoogleAuthProvider();
+provider.setCustomParameters({promp: 'select_account'});
+export const signInWithGoogle = () => signInWithPopup(auth, provider)
+
 const db = getFirestore()
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -24,12 +30,12 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
     const snapShot = await getDoc(userRef)
 
-    if (!snapShot.exists) {
+    if (!snapShot.exists()) {
         const { displayName, email, photoURL } = userAuth;
         const createdAt = new Date();
-
+        console.log(userAuth)
         try {
-            await setDoc({
+            await setDoc(userRef, {
                 displayName,
                 email,
                 createdAt,
@@ -41,18 +47,15 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         }
     }
 
-    console.log(snapShot)
+    // console.log(userRef)
+
 
     return userRef;
 
     // console.log(doc(users, 'slkjSF2'))
 }
 
-export const auth = getAuth();
 
-const provider = new GoogleAuthProvider();
-provider.setCustomParameters({promp: 'select_account'});
-export const signInWithGoogle = () => signInWithPopup(auth, provider)
 // .then((result) => {
 //     const credential = GoogleAuthProvider.credentialFromResult(result);
 //     console.log(credential)

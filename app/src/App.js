@@ -16,10 +16,10 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged(async user => {
+      setCurrentUser(user)
       createUserProfileDocument(user)
-      // setCurrentUser(user)
     })
-  }, [currentUser])
+  }, [])
 
   const signOut = () => {
     auth.signOut()
