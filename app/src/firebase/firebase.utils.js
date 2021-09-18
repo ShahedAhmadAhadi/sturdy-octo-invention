@@ -23,6 +23,7 @@ export const signInWithGoogle = () => signInWithPopup(auth, provider)
 const db = getFirestore()
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
+    console.log(userAuth, additionalData, 'alsjd')
     if(!userAuth) return;
 
     const users = collection(db, 'users')

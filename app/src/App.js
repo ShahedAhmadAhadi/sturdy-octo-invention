@@ -8,6 +8,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import SignIn from './components/signIn';
 import Main from './components/main';
 import Header from './components/header';
+import SignUp from './components/signUp';
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
         <Header user={currentUser} signOut={() => signOut()} />
         <Route exact path="/" component={Main} ></Route>
         <Route exact path="/sign" component={SignIn} ></Route>
+        <Route exact path="/signup" component={SignUp}></Route>
     </div>
   );
 }
