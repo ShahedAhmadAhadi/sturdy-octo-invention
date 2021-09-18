@@ -23,7 +23,11 @@ function SignUp() {
 
             const { user } = await createUserWithEmailAndPassword(auth, email, password)
 
-            await createUserProfileDocument(user, displayName, image)
+            console.log(user, displayName)
+
+            await createUserProfileDocument(user, {displayName: displayName, photoURL: image})
+
+            // await createUserProfileDocument(user, displayName, image)
 
             setEmail('')
             setImage('')
