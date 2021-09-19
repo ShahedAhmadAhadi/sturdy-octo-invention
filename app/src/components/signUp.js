@@ -1,6 +1,7 @@
 import React from 'react'
 import { auth, createUserProfileDocument} from '../firebase/firebase.utils'
 import {createUserWithEmailAndPassword} from 'firebase/auth'
+import {getStorage, ref, uploadBytesResumable, getDownloadURL, uploadBytes} from 'firebase/storage'
 import { useState, useEffect } from 'react'
 function SignUp() {
 
@@ -21,13 +22,19 @@ function SignUp() {
 
         try {
 
+            
+            
+            const storage = getStorage();
+            
+            const storageRef = ref(storage, image.name)
+            // const fileRef = storageRef.child(image.name)
+            const uploadImage = await uploadBytesResumable(storageRef, image)
+            
+            const photoURL = await getDownloadURL(uploadImage.ref)
+            await console.log(photoURL, displayName)
+            
             const { user } = await createUserWithEmailAndPassword(auth, email, password)
-
-            console.log(user, displayName)
-
-            await createUserProfileDocument(user, {displayName: displayName, photoURL: image})
-
-            // await createUserProfileDocument(user, displayName, image)
+            await createUserProfileDocument(user, {displayName: displayName, photoURL: photoURL})
 
             setEmail('')
             setImage('')
@@ -40,6 +47,15 @@ function SignUp() {
         }
     }
 
+    const handleImage = async (e) => {
+        console.log(e)
+        setImage(e.target.files[0])        
+        // storageRef.put(image).then(() => {
+        //     console.log('file uploaded', image.name)
+        // })
+        // const uploadImage = uploadBytes(storageRef, image)
+    }
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -47,7 +63,7 @@ function SignUp() {
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)} required placeholder="email" />
                 <input type="password" value={password} onChange={e => setPassword(e.target.value)} required placeholder="password" />
                 <input type="password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} required placeholder="confirm-password" />
-                <input type="file" onChange={e => setImage(e.target.files[0])} required placeholder="file" />
+                <input type="file" onChange={(e) => handleImage(e)} required placeholder="file" />
                 <button>Sign Up</button>
             </form>
         </div>
