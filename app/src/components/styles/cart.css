@@ -7,7 +7,6 @@
     width: 30px;
     height: 30px;
     position: absolute;
-    /* background-color: red; */
     display: flex;
     align-items: center;
     border-radius: 50%;
@@ -17,10 +16,24 @@
 }
 
 .cart-wrapper:hover{
-    color: #44b;
     background-color: #eaeaea;
 }
 
 .cart{
     margin-left: 6px;
+}
+
+.cart-items{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 0.7rem;
+    background-color: #0c8643;
+    border-radius: 50%;
+    color: white;
+    padding: 0rem 0.2rem;
+}
+
+.cart-wrapper:hover .cart-items{
+    background-color: #44b;
 }

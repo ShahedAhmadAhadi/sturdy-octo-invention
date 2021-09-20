@@ -1,6 +1,6 @@
 .wrapper{
     display: flex;
-    background-image: linear-gradient(to right, #55bbb2, #c9c);
+    background-image: linear-gradient(to right, #c9c 30%, #55bbb2);
     padding: 0 0 0 2rem;
     font-size: 0.8rem;
     align-items: center;

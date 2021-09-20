@@ -6,6 +6,7 @@ function Cart() {
     return (
         <div className="cart-wrapper">
             <FiShoppingCart className="cart" />
+            <div className="cart-items">2</div>
         </div>
     )
 }
