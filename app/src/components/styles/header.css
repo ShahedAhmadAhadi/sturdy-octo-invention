@@ -16,6 +16,12 @@
     position: relative;
 }
 
+.inner-wrapper{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .list{
     display: flex;
 }

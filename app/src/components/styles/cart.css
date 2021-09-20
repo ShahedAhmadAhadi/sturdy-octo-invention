@@ -1,0 +1,12 @@
+.cart-wrapper{
+    color: #222;
+    text-decoration: none;
+    margin: 0;
+    font-weight: 500;
+    padding: 0.1rem 2rem 0.2rem 2rem;
+    cursor: pointer;
+}
+
+.cart-wrapper:hover{
+    color: #44b;
+}
