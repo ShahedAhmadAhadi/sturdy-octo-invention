@@ -18,10 +18,11 @@ function Header(props) {
                 Logo
             </h1>
             <div className="inner-wrapper">
-                <div className="list">
+                <div className="list" style={{position: 'relative'}}>
 
                     <NavLink to="/" activeClassName="active-link" className="link">Home</NavLink>
-                    <div className="link">Catagories</div>
+                    <div className="link">Catagories
+                    </div>
                     <Cart />
                 </div>
                 <div className="list">
