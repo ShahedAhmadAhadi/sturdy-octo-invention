@@ -6,7 +6,10 @@ function Cart() {
     return (
         <div className="cart-wrapper">
             <FiShoppingCart className="cart" />
-            <div className="cart-items">2</div>
+            <div className="cart-items-num">2</div>
+            <div className="cart">
+                
+            </div>
         </div>
     )
 }

@@ -23,7 +23,7 @@
     margin-left: 6px;
 }
 
-.cart-items{
+.cart-items-num{
     position: absolute;
     right: 0;
     top: 0;
@@ -31,9 +31,10 @@
     background-color: #0c8643;
     border-radius: 50%;
     color: white;
-    padding: 0rem 0.2rem;
+    width: 15px;
+    height: 15.5px;
 }
 
-.cart-wrapper:hover .cart-items{
+.cart-wrapper:hover .cart-items-num{
     background-color: #44b;
 }
