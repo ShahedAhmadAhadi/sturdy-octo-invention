@@ -57,14 +57,14 @@ function SignUp() {
     }
 
     return (
-        <div>
+        <div className="form-wrapper">
             <form onSubmit={handleSubmit}>
                 <input type="text" value={displayName} onChange={e => setDisplayName(e.target.value)} required placeholder="displayName" />
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)} required placeholder="email" />
                 <input type="password" value={password} onChange={e => setPassword(e.target.value)} required placeholder="password" />
                 <input type="password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} required placeholder="confirm-password" />
-                <input type="file" onChange={(e) => handleImage(e)} required placeholder="file" />
-                <button>Sign Up</button>
+                <input type="file" onChange={(e) => handleImage(e)} required placeholder="file" className="custom-file-input" />
+                <input type="submit" value="SignUp" />
             </form>
         </div>
     )

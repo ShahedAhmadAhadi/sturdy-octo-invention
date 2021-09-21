@@ -9,6 +9,7 @@ import SignIn from './components/signIn';
 import Main from './components/main';
 import Header from './components/header';
 import SignUp from './components/signUp';
+import './components/styles/styles.css'
 
 
 function App() {
