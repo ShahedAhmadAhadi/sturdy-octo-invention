@@ -9,7 +9,7 @@ form{
     display: flex;
     flex-direction: column;
     width: 320px;
-    margin-top: -3rem;
+    /* margin-top: -3rem; */
     padding: 1rem;
     border-radius: 7px;
     box-shadow: 1px 1px 4px 4px #eee;
