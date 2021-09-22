@@ -28,7 +28,7 @@
     right: 0;
     top: 0;
     font-size: 0.7rem;
-    background-color: #0c8643;
+    background-color: #840032ee;
     border-radius: 50%;
     color: white;
     width: 15px;
@@ -36,5 +36,6 @@
 }
 
 .cart-wrapper:hover .cart-items-num{
-    background-color: #44b;
+    background-color: #e9dea2;
+    color: #000;
 }
