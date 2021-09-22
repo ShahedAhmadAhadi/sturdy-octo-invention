@@ -6,15 +6,15 @@ function Main() {
 
     const [addItemVisible, setAddItemVisible] = useState(false)
 
-    const addItemShow = () => {
-        setAddItemVisible(true)
+    const addItemShow = (value) => {
+        setAddItemVisible(value)
     }
 
     return (
         <div>
             <h1>Main</h1>
-            <button className="btn-add" onClick={() => addItemShow()}>Add Item</button>
-            {addItemVisible && <AddItem />}
+            <button className="btn-add" onClick={() => addItemShow(true)}>Add Item</button>
+            {addItemVisible && <AddItem visiblity={() => addItemShow()} />}
         </div>
     )
 }
