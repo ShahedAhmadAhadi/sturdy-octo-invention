@@ -31,23 +31,28 @@ input[type="submit"]{
     width: 40%;
     padding: 0.7rem 0.5rem;
     border: none;
-    background: linear-gradient(to left bottom, #3334aa, #12eedd);
+    background: linear-gradient(to left bottom, #3334aa -10%, #12eedd);
     /* background-image: linear-gradient(to left bottom, #c9c 30%, #55bbb2); */
     color: white;
-    font-weight: 500;
+    font-weight: 550;
+    font-size: 0.9rem;
     align-self: center;
     border-radius: 5px;
     cursor: pointer;
 }
+input[type="submit"]:hover{
+    color: #840032;
+}
 input[type="file"]{
-    /* border: none; */
-    padding: 1rem 1rem 0.37rem 0;
+    border-radius: 0 5px;
+    padding: 1rem 1rem 0.33rem 0;
 }
 .custom-file-input::-webkit-file-upload-button {
     visibility: hidden;
     width: 0;
 }
   .custom-file-input::before {
+      z-index: 10;
     content: 'Choose Files';
     /* background: linear-gradient(top, #837d7d, #e3e3e3); */
     border-radius: 5px 0 0 5px;
@@ -58,8 +63,9 @@ input[type="file"]{
     outline: none;
     cursor: pointer;
     font-size: 0.8rem;
-    background: linear-gradient(to left bottom, #3334aa, #12eedd);
+    background: linear-gradient(to left bottom, #3334aa -10%, #12eedd);
   }
   .custom-file-input:hover::before {
     border-color: black;
+    color: #840032;
   }
