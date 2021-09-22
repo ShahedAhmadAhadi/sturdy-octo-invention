@@ -8,7 +8,7 @@
 form{
     display: flex;
     flex-direction: column;
-    width: 27%;
+    width: 320px;
     margin-top: -3rem;
     padding: 1rem;
     border-radius: 7px;
@@ -20,6 +20,7 @@ input{
     margin: 0.5rem 0.5rem;
     border: 1px solid white;
     border-bottom: 1px solid gray;
+    font-size: 0.85rem;
 }
 input:focus{
     border: 1px solid white;
@@ -30,14 +31,17 @@ input[type="submit"]{
     width: 40%;
     padding: 0.7rem 0.5rem;
     border: none;
-    background: #348afa;
+    background: linear-gradient(to left bottom, #3334aa, #12eedd);
+    /* background-image: linear-gradient(to left bottom, #c9c 30%, #55bbb2); */
     color: white;
     font-weight: 500;
     align-self: center;
+    border-radius: 5px;
+    cursor: pointer;
 }
 input[type="file"]{
-    border: none;
-    padding: 1rem 1rem 1rem 0;
+    /* border: none; */
+    padding: 1rem 1rem 0.37rem 0;
 }
 .custom-file-input::-webkit-file-upload-button {
     visibility: hidden;
@@ -46,8 +50,7 @@ input[type="file"]{
   .custom-file-input::before {
     content: 'Choose Files';
     /* background: linear-gradient(top, #837d7d, #e3e3e3); */
-    border-right: 1px solid #348afa;
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px 0 0 5px;
     color: white;
     display:inline;
     /* border-radius: 3px; */
@@ -55,7 +58,7 @@ input[type="file"]{
     outline: none;
     cursor: pointer;
     font-size: 0.8rem;
-    background: #348afa;
+    background: linear-gradient(to left bottom, #3334aa, #12eedd);
   }
   .custom-file-input:hover::before {
     border-color: black;

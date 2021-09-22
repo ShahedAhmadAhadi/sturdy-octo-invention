@@ -42,8 +42,10 @@ function SignIn() {
             <form onSubmit={(e) => handleSubmit(e)}>
                 <input type="text" value={email} required placeholder="E-mail" onChange={handleChangeEmail} />
                 <input type="password" value={password} required placeholder="password" onChange={handleChangePassword} />
-                <input type="submit" value="Submit"/>
-                <input type="submit" onClick={signInWithGoogle} value="Sign with google"/>
+                <div style={{display:'flex', justifyContent:'center'}}>
+                    <input type="submit" value="Submit"/>
+                    <input type="submit" onClick={signInWithGoogle} value="Sign with google"/>
+                </div>
             </form>
         </div>
     )

@@ -1,6 +1,7 @@
 .wrapper{
     display: flex;
-    background-image: linear-gradient(to right, #c9c 30%, #55bbb2);
+    /* background-image: linear-gradient(to right, #c9c 30%, #55bbb2); */
+    background: linear-gradient(to left bottom, #3334aa, #12eeddaa);
     padding: 0 0 0 2rem;
     font-size: 0.8rem;
     align-items: center;
@@ -32,14 +33,15 @@
     margin: 0;
     font-weight: 500;
     padding: 0.1rem 2rem 0.2rem 2rem;
+    color: #ecd657;
     cursor: pointer;
 }
 
 .link:hover{
-    color: #44b;
+    color: #840032;
 }
 
 .active-link{
-    color: #44b;
-    border-bottom: 2px solid #44b;
+    color: #fff;
+    border-bottom: 2px solid #e9dea2;
 }
