@@ -4,7 +4,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { onSnapshot } from '@firebase/firestore';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, BrowserRouter, useHistory } from 'react-router-dom';
 import SignIn from './components/signIn';
 import Main from './components/main';
 import Header from './components/header';
@@ -13,6 +13,8 @@ import './components/styles/styles.css'
 
 
 function App() {
+
+  let history = useHistory();
 
   const [currentUser, setCurrentUser] = useState('')
 
@@ -25,6 +27,7 @@ function App() {
 
         onSnapshot(userRef, (snapShot) => {
           setCurrentUser({id:snapShot.id, ...snapShot.data()})
+          history.push('/')
         })
         // userRef.(snapShot => {
         //   console.log(snapShot)
