@@ -14,7 +14,7 @@ function UserSection(props) {
         <div className="child" onClick={props.dropdownToggle}>
             <span className="name-container">{sliceDisplayName}</span>
             <span className="image-container"><img src={props.user.photoURL} className="user-image" /></span>
-            <span className="caret-container"><FaCaretDown /></span>
+            <span className="caret-container" ><FaCaretDown /></span>
         </div>
     )
 }
