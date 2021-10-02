@@ -20,7 +20,7 @@ function Header(props) {
             <div className="inner-wrapper">
                 <div className="list" style={{position: 'relative'}}>
 
-                    <NavLink to="/" activeClassName="active-link" className="link">Home</NavLink>
+                    <NavLink to="/" exact activeClassName="active-link" className="link">Home</NavLink>
                     <div className="link">Catagories
                     </div>
                     <Cart />

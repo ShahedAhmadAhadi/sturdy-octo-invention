@@ -14,8 +14,9 @@ function SignIn() {
 
         try {
             await signInWithEmailAndPassword(auth, email, password)
-            setPassword('')
-            setEmail('')
+            // setPassword('')
+            // setEmail('')
+            console.log(email)
         } catch (error) {
             console.log(error)
         }

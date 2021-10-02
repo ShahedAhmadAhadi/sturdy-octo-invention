@@ -5,7 +5,6 @@ function UserDropdown(props) {
 
     console.log(props)
     return (
-        <div style={{width: '100%', height:'100vh', background: '#000aa', position: 'absolute', top: 0, left:0}} onClick={()=> {props.dropdownToggle()}}>
 
         <div className='dropdown' onClick={e => e.stopPropagation()}>
 
@@ -17,7 +16,6 @@ function UserDropdown(props) {
                 <li onClick={() => { props.dropdownToggle(); props.signOut(); }} className="list-item-1">Sign Out</li>
 
             </ul>
-        </div>
         </div>
     )
 }
