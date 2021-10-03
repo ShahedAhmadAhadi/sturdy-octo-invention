@@ -5,12 +5,15 @@ import UserSection from './header_user_section'
 import UserDropdown from './user_func_dropdown'
 import {useState} from 'react'
 import Cart from './cart'
+import { connect } from 'react-redux'
 
-function Header(props) {
+function Header({currentUser}, props) {
 
     const [dropdownToggle, setDropdownToggle] = useState(false)
 
     console.log(dropdownToggle)
+
+    console.log(currentUser, 'asldfjlsj')
 
     return (
         <div className="wrapper">
@@ -26,12 +29,12 @@ function Header(props) {
                     <Cart />
                 </div>
                 <div className="list">
-                    {!props.user && <NavLink to="/signup" activeClassName="active-link" className="link">Sign Up</NavLink>}
-                    {/* {props.user && <AiOutlineShoppingCart className="link" style={{fontSize: '1.1rem'}} /> } */}
-                    {/* {props.user && <a className="link" onClick={() => props.signOut()}>Sign Out</a>} */}
-                    {props.user && <UserSection user={props.user} dropdownToggle={() => setDropdownToggle(!dropdownToggle)}></UserSection>}
-                    {!props.user && <NavLink to="/sign" activeClassName="active-link" className="link">sign In</NavLink>}
-                    {dropdownToggle && <UserDropdown user={props.user} signOut={props.signOut} dropdownToggle={()=> setDropdownToggle(!dropdownToggle)} />}
+                    {!currentUser && <NavLink to="/signup" activeClassName="active-link" className="link">Sign Up</NavLink>}
+                    {/* {currentUser && <AiOutlineShoppingCart className="link" style={{fontSize: '1.1rem'}} /> } */}
+                    {/* {currentUser && <a className="link" onClick={() => props.signOut()}>Sign Out</a>} */}
+                    {currentUser && <UserSection user={currentUser} dropdownToggle={() => setDropdownToggle(!dropdownToggle)}></UserSection>}
+                    {!currentUser && <NavLink to="/sign" activeClassName="active-link" className="link">sign In</NavLink>}
+                    {dropdownToggle && <UserDropdown user={currentUser} signOut={props.signOut} dropdownToggle={()=> setDropdownToggle(!dropdownToggle)} />}
 
                 </div>
 
@@ -42,4 +45,8 @@ function Header(props) {
     )
 }
 
-export default Header
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+})
+
+export default connect(mapStateToProps)(Header)

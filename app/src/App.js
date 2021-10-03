@@ -10,16 +10,18 @@ import Main from './components/main';
 import Header from './components/header';
 import SignUp from './components/signUp';
 import './components/styles/styles.css'
+import { setCurrentUser } from './redux/user/user-actions';
+import { connect } from 'react-redux';
 
 
-function App() {
+function App(props) {
 
   let history = useHistory();
 
-  const [currentUser, setCurrentUser] = useState('')
-
-
+  // const [currentUser, setCurrentUser] = useState('')
+  
   useEffect(() => {
+    const {setCurrentUser} = props
     auth.onAuthStateChanged(async userAuth => {
       // setCurrentUser(userAuth)
       if (userAuth) {
@@ -32,7 +34,6 @@ function App() {
         // userRef.(snapShot => {
         //   console.log(snapShot)
         // })
-        console.log(currentUser)
       }
       // setCurrentUser(user)
       // createUserProfileDocument(user)
@@ -61,7 +62,8 @@ function App() {
           Learn React
         </a>
       </header> */}
-        <Header user={currentUser} signOut={() => signOut()} />
+        {/* <Header user={currentUser} signOut={() => signOut()} /> */}
+        <Header />
         <Route exact path="/" component={Main} ></Route>
         <Route exact path="/sign" component={SignIn} ></Route>
         <Route exact path="/signup" component={SignUp}></Route>
@@ -69,4 +71,8 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+})
+
+export default connect(null, mapDispatchToProps)(App);
