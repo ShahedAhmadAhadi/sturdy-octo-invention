@@ -66,7 +66,7 @@ function App(props) {
         <Header />
         <Route exact path="/" component={Main} ></Route>
         <Route exact path="/sign" component={SignIn} ></Route>
-        <Route exact path="/signup" render={() => {props.currentUser ? (<Redirect />) : (<SignUp />)}}></Route>
+        <Route exact path="/signup" render={() => {props.currentUser ? (<Redirect to="/" />) : (<SignUp />)}}></Route>
     </div>
   );
 }
