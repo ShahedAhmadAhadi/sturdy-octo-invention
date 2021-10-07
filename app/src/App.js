@@ -24,7 +24,7 @@ function App(props) {
   }
 
   const a = users(db)
-  console.log(a, 'asldjiiii')
+  // console.log(a, 'asldjiiii')
 
   // const [currentUser, setCurrentUser] = useState('')
   
