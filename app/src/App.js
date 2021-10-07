@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument, getUsers, db } from './firebase/firebase.utils';
 import { onSnapshot } from '@firebase/firestore';
 import { Route, Switch, BrowserRouter, useHistory, Redirect } from 'react-router-dom';
 import SignIn from './components/signIn';
@@ -17,6 +17,14 @@ import { connect } from 'react-redux';
 function App(props) {
 
   let history = useHistory();
+
+  async function users(db) {
+   const a = await getUsers(db)
+   return a
+  }
+
+  const a = users(db)
+  console.log(a, 'asldjiiii')
 
   // const [currentUser, setCurrentUser] = useState('')
   

@@ -1,9 +1,9 @@
 import { initializeApp } from 'firebase/app';
-import {collection, doc, getFirestore, getDoc, setDoc, onSnapshot} from 'firebase/firestore';
+import {collection, doc, getFirestore, getDoc, getDocs ,  setDoc, onSnapshot} from 'firebase/firestore';
 import { GoogleAuthProvider,getAuth, signInWithPopup } from 'firebase/auth';
 import config from './firebase.config'
 
-initializeApp(config);
+const app = initializeApp(config);
 
 export const auth = getAuth();
 
@@ -11,10 +11,20 @@ const provider = new GoogleAuthProvider();
 provider.setCustomParameters({promp: 'select_account'});
 export const signInWithGoogle = () => signInWithPopup(auth, provider)
 
-const db = getFirestore()
+export const db = getFirestore(app)
+
+export async function getUsers(db) {
+    const usersCol = collection(db, 'users')
+    // const userRef = doc(usersCol)
+    // const usersSnapshot = await getDocs(usersCol)
+    // const userList = usersSnapshot.docs.forEach(item => {let a = item.data() ;console.log(a)})
+    console.log(usersCol)
+    // .map(doc = doc.data())
+    return usersCol
+}
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-    console.log(userAuth, additionalData, 'alsjd')
+    // console.log(userAuth, additionalData, 'alsjd')
     if(!userAuth) return;
 
     const users = collection(db, 'users')
