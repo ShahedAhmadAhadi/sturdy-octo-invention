@@ -15,13 +15,13 @@ function AddItem(props) {
                     <input type="text" placeholder="discription" />
                     <input type="number" placeholder="price" step=".01" />
                     <select name="Catagory">
-                        <option value="fruit">Fruit</option>
+                        <option disabled selected hidden>Catagory</option>
                         <option>Fruit</option>
                         <option>Fruit</option>
                     </select>
                     <input type="file" />
                     <input type="number" placeholder="amount" />
-                    {/* <input type="submit" onSubmit={} value="Add Item" /> */}
+                    <input type="submit" value="Add Item" />
                 </form>
             </div>
         </div>

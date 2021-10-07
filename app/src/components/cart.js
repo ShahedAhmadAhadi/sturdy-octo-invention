@@ -15,7 +15,7 @@ function Cart() {
     return (
         <div className="cart-wrapper" onMouseEnter={() => hover('#840032')} onMouseLeave={() => hover('#e9dea2')}>
             <FiShoppingCart className="cart" style={{color: color}} />
-            <div className="cart-items-num">2</div>
+            <div className="cart-items-num">0</div>
             <div className="cart">
 
             </div>

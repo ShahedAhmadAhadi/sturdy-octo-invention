@@ -11,9 +11,7 @@ function Header({currentUser}, props) {
 
     const [dropdownToggle, setDropdownToggle] = useState(false)
 
-    console.log(dropdownToggle)
-
-    console.log(currentUser, 'asldfjlsj')
+    console.log(currentUser, props)
 
     return (
         <div className="wrapper">
