@@ -29,14 +29,14 @@ function App(props) {
   // const [currentUser, setCurrentUser] = useState('')
   
   useEffect(() => {
-    const {setCurrentUser} = props
+    // const {setCurrentUser} = props
     auth.onAuthStateChanged(async userAuth => {
       // setCurrentUser(userAuth)
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         onSnapshot(userRef, (snapShot) => {
-          setCurrentUser({id:snapShot.id, ...snapShot.data()})
+          props.setCurrentUser({id:snapShot.id, ...snapShot.data()})
           history.push('/')
         })
         // userRef.(snapShot => {

@@ -1,8 +1,9 @@
 
 
-export const setCounter = () => {
-
-}
+export const setCounter = (counter) => ({
+    type : 'increment',
+    payload: counter
+})
 
 const INITIAL_STATE = {
     counter: 0
@@ -12,16 +13,16 @@ const counterReducer = (state = INITIAL_STATE, action) => {
     switch (action.payload) {
         case 'increment':
             return {...state,
-                counter: state.counter + 1
+                counter: action.payload
                 }
 
         case 'decrement':
             return {
                 ...state,
-                counter: state.counter - 1
+                counter: action.payload
             }    
         default:
-            return {state}
+            return state
     }
 }
 
