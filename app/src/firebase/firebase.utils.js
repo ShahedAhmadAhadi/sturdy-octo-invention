@@ -16,14 +16,15 @@ export const db = getFirestore(app)
 export async function getUsers(db) {
     const usersCol = collection(db, 'users')
     const userRef = doc(usersCol, 'dLckg9yGnEVXR3rJgj0U9RDOQiE3')
-    const usersSnapshot = await getDoc(userRef)
-    // const usersSnapshot = await getDocs(usersCol)
+    const userSnapshot = await getDoc(userRef)
+    const usersSnapshot = await getDocs(usersCol)
     // onSnapshot(usersSnapshot, snapShot => {console.log(snapShot)})
     // const userList = usersSnapshot.docs.forEach(item => {let a = item.data() ;console.log(a)})
-    // const userObject = usersSnapshot
-    console.log(usersSnapshot.data())
+    const listUsers = usersSnapshot.docs.map(item => item.data())
+    console.log(userSnapshot.data())
+    console.log(listUsers)
     // .map(doc = doc.data())
-    return usersCol
+    return listUsers
 }
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
