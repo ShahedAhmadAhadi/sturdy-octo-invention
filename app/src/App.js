@@ -28,25 +28,25 @@ function App(props) {
 
   // const [currentUser, setCurrentUser] = useState('')
   
-  useEffect(() => {
-    // const {setCurrentUser} = props
-    auth.onAuthStateChanged(async userAuth => {
-      // setCurrentUser(userAuth)
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
+  // useEffect(() => {
+  //   // const {setCurrentUser} = props
+  //   auth.onAuthStateChanged(async userAuth => {
+  //     // setCurrentUser(userAuth)
+  //     if (userAuth) {
+  //       const userRef = await createUserProfileDocument(userAuth);
 
-        onSnapshot(userRef, (snapShot) => {
-          props.setCurrentUser({id:snapShot.id, ...snapShot.data()})
-          history.push('/')
-        })
-        // userRef.(snapShot => {
-        //   console.log(snapShot)
-        // })
-      }
-      // setCurrentUser(user)
-      // createUserProfileDocument(user)
-    })
-  }, [])
+  //       onSnapshot(userRef, (snapShot) => {
+  //         props.setCurrentUser({id:snapShot.id, ...snapShot.data()})
+  //         history.push('/')
+  //       })
+  //       // userRef.(snapShot => {
+  //       //   console.log(snapShot)
+  //       // })
+  //     }
+  //     // setCurrentUser(user)
+  //     // createUserProfileDocument(user)
+  //   })
+  // }, [])
 
   const signOut = () => {
     auth.signOut()
@@ -71,7 +71,7 @@ function App(props) {
         </a>
       </header> */}
         {/* <Header user={currentUser} signOut={() => signOut()} /> */}
-        <Header />
+        {/* <Header /> */}
         <Route exact path="/" component={Main} ></Route>
         <Route exact path="/sign" component={SignIn} ></Route>
         <Route exact path="/signup" render={() => {props.currentUser ? (<Redirect to="/" />) : (<SignUp />)}}></Route>
@@ -79,12 +79,13 @@ function App(props) {
   );
 }
 
-const mapStateToProps = ({user}) => ({
-  currentUser: user.currentUser
-})
+// const mapStateToProps = ({user}) => ({
+//   currentUser: user.currentUser
+// })
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
-})
+// const mapDispatchToProps = dispatch => ({
+//   setCurrentUser: user => dispatch(setCurrentUser(user))
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App

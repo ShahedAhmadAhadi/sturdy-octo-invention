@@ -13,7 +13,7 @@ import userReducer from './user/user-reducer'
 
 const store = configureStore({
     reducer: {
-        user: userReducer,
+        // user: userReducer,
         counter: counterReducer
     }
 })
