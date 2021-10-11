@@ -3,7 +3,7 @@ import AddItem from './add_item'
 import { useState } from 'react'
 import OutsideAlerter from './close_dropdown'
 import store from '../redux/store'
-import { count, counterSlice } from '../redux/counter/couter-reducer'
+import {  counterSlice, decrement } from '../redux/counter/couter-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { increment, counter } from './../redux/counter/couter-reducer'
 
@@ -22,6 +22,7 @@ function Main(props) {
             {addItemVisible && <AddItem visiblity={() => setAddItemVisible(false)} />}
             {/* <div>{props.counter}</div> */}
             <button onClick={() => dispatch(increment())}>{count}</button>
+            <button onClick={() => dispatch(decrement())}>{count}</button>
             {/* <OutsideAlerter /> */}
         </div>
     )
