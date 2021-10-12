@@ -6,20 +6,19 @@ import store from '../redux/store'
 import {  counterSlice, decrement } from '../redux/counter/couter-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { increment, counter } from './../redux/counter/couter-reducer'
-import {textReducer} from './../redux/text/text-reducer'
+import {textstate} from './../redux/text/text-reducer'
+import { setTextState } from './../redux/text/text-reducer'
+import {connect} from 'react-redux'
 
 function Main(props) {
     const count = useSelector(counter)
     const [addItemVisible, setAddItemVisible] = useState(false)
     const dispatch = useDispatch()
     const [text, setText] = useState('')
+    const textState = useSelector(textstate)
     // console.log(counterSlice.actions.increment())
     // props.setCounter(1)
     // console.log(count())
-
-    const value = (e) => {
-        setText(e.target.value())
-    }
 
     return (
         <div>
@@ -31,12 +30,15 @@ function Main(props) {
             <button onClick={() => dispatch(decrement())}>{count}</button>
             {/* <OutsideAlerter /> */}
             <div>
-                <input type="text" value={()=> value()} />
-                <button on>send</button>
-                <span></span>
+                <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+                <button onClick={() => dispatch(setTextState(text))}>send</button>
+                <span>{textState}</span>
             </div>
         </div>
     )
 }
 
-export default Main
+
+  export default Main;
+
+// export default Main

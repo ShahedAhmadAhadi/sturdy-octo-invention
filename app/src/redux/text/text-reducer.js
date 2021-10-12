@@ -2,10 +2,10 @@ const INITIAL_STATE = {
     text: ''
 }
 
-// export const setCurrentUser = user => ({
-//     type: userActionTypes.SET_CURRENT_USER,
-//     payload: user
-// })
+export const setTextState = text => ({
+    type: 'TEXT',
+    payload: text
+})
 
 const textReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
@@ -18,5 +18,7 @@ const textReducer = (state = INITIAL_STATE, action) => {
             return state;
     }
 }
+
+export const textstate = (state) => state.text.text;
 
 export default textReducer;
