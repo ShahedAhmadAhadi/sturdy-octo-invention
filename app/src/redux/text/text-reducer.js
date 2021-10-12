@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    text: ''
+    value: ''
 }
 
 export const setTextState = text => ({
@@ -12,13 +12,13 @@ const textReducer = (state = INITIAL_STATE, action) => {
         case 'TEXT':
             return {
                 ...state,
-                text: action.payload
+                value: state.value + action.payload
             }    
         default:
             return state;
     }
 }
 
-export const textstate = (state) => state.text.text;
+export const textstate = (state) => state.text.value;
 
 export default textReducer;

@@ -31,7 +31,7 @@ function Main(props) {
             {/* <OutsideAlerter /> */}
             <div>
                 <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
-                <button onClick={() => dispatch(setTextState(text))}>send</button>
+                <button onClick={() => {dispatch(setTextState(text)); setText('')}}>send</button>
                 <span>{textState}</span>
             </div>
         </div>
