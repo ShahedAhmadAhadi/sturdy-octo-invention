@@ -11,12 +11,3 @@ const store = createStore(rootReducer, applyMiddleware(...middleWares));
 
 export default store
 
-// const store = configureStore({
-//     reducer: {
-//         user: userReducer,
-//         counter: counterReducer
-//     }
-// })
-
-// export default store
-
