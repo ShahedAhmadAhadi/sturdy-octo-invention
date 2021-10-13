@@ -2,8 +2,8 @@ const INITIAL_STATE = {
     value: ''
 }
 
-export const setTextState = text => ({
-    type: 'TEXT',
+export const setTextState = (type, text) => ({
+    type: type,
     payload: text
 })
 
@@ -13,7 +13,12 @@ const textReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 value: state.value + action.payload
-            }    
+            }
+        case "NEW_TEXT":
+            return {
+                ...state,
+                value: action.payload
+            }
         default:
             return state;
     }
