@@ -26,7 +26,7 @@ function Main(props) {
             <button className="btn-add" onClick={() => setAddItemVisible(true)}>Add Item</button>
             {addItemVisible && <AddItem visiblity={() => setAddItemVisible(false)} />}
             {/* <div>{props.counter}</div> */}
-            <button onClick={() => dispatch(increment())}>{count}</button>
+            {/* <button onClick={() => dispatch(increment())}>{count}</button>
             <button onClick={() => dispatch(decrement())}>{count}</button>
             {/* <OutsideAlerter /> */}
             <div>
@@ -34,8 +34,8 @@ function Main(props) {
                 <button onClick={() => {dispatch(setTextState("TEXT", text)); setText('')}}>send</button>
                 <button onClick={() => {dispatch(setTextState("NEW_TEXT", text)); setText('')}}>new send</button>
                 <span>{textState}</span>
-            </div>
-        </div>
+            </div> */}
+        </div>.LDKjf
     )
 }
 
