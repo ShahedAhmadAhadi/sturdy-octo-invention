@@ -28,14 +28,14 @@ function Main(props) {
             {/* <div>{props.counter}</div> */}
             {/* <button onClick={() => dispatch(increment())}>{count}</button>
             <button onClick={() => dispatch(decrement())}>{count}</button>
-            {/* <OutsideAlerter /> */}
+            {/* <OutsideAlerter />
             <div>
                 <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
                 <button onClick={() => {dispatch(setTextState("TEXT", text)); setText('')}}>send</button>
                 <button onClick={() => {dispatch(setTextState("NEW_TEXT", text)); setText('')}}>new send</button>
                 <span>{textState}</span>
             </div> */}
-        </div>.LDKjf
+        </div>
     )
 }
 

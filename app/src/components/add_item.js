@@ -14,8 +14,8 @@ function AddItem(props) {
                     <input type="text" placeholder="item-name" />
                     <input type="text" placeholder="discription" />
                     <input type="number" placeholder="price" step=".01" />
-                    <select name="Catagory">
-                        <option disabled selected hidden>Catagory</option>
+                    <select name="Catagory" defaultValue="Catagory">
+                        <option value="Catagory" disabled>Catagory</option>
                         <option>Fruit</option>
                         <option>Fruit</option>
                     </select>
