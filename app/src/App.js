@@ -11,12 +11,14 @@ import Header from './components/header';
 import SignUp from './components/signUp';
 import './components/styles/styles.css'
 import { setCurrentUser } from './redux/user/user-actions';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
+import { setDropdownToggle, dropdownToggle} from './redux/dropdown/func-dropdown';
 
 
 function App(props) {
 
   let history = useHistory();
+  const dropdown = useSelector(dropdownToggle)
 
   async function users(db) {
    const a = await getUsers(db)
@@ -55,7 +57,7 @@ function App(props) {
   }
 
   return (
-    <div className="App">
+    <div className="App" >
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -71,7 +73,7 @@ function App(props) {
         </a>
       </header> */}
         {/* <Header user={currentUser} signOut={() => signOut()} /> */}
-        <Header />
+        <Header onClick={() => setDropdownToggle(false)} />
         <Route exact path="/" component={Main} ></Route>
         <Route exact path="/sign" component={SignIn} ></Route>
         <Route exact path="/signup" render={() => {props.currentUser ? (<Redirect to="/" />) : (<SignUp />)}}></Route>
