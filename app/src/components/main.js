@@ -9,6 +9,8 @@ import { increment, counter } from './../redux/counter/couter-reducer'
 import {textstate} from './../redux/text/text-reducer'
 import { setTextState } from './../redux/text/text-reducer'
 import {connect} from 'react-redux'
+import DropdownPage from './drop_component'
+import DropdownPage1 from './DropdownPage1'
 
 function Main(props) {
     const count = useSelector(counter)
@@ -35,6 +37,8 @@ function Main(props) {
                 <button onClick={() => {dispatch(setTextState("NEW_TEXT", text)); setText('')}}>new send</button>
                 <span>{textState}</span>
             </div> */}
+            <DropdownPage />
+            <DropdownPage1 />
         </div>
     )
 }
