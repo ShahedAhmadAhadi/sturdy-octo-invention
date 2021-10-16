@@ -2,9 +2,9 @@ const INITIAL_STATE = {
     drop: false
 }
 
-export const setDropdownToggle = (type, payload) => ({
+export const setDropdownToggle = (bool) => ({
     type: 'DROPDOWN',
-    payload: bool
+    paylaod: bool
 })
 
 const funcDropdownReducer = (state = INITIAL_STATE, action)=>{
@@ -12,19 +12,14 @@ const funcDropdownReducer = (state = INITIAL_STATE, action)=>{
         case 'DROPDOWN':
             return {
                 ...state,
-                drop: action.payload
-            }
-        case "DROPDOWN-FALSE":
-            return {
-                ...state,
-                drop: action.payload
-            }
-    
+                drop: action.paylaod
+            }    
         default:
-            return {
-                state
-            }
+            return state
     }
 }
 
+export const dropdownToggle  = (state) => state.dropdown.drop
+
 export default funcDropdownReducer
+// export default funcDropdownReducer
