@@ -6,10 +6,11 @@ import UserDropdown from './user_func_dropdown'
 import {useState} from 'react'
 import Cart from './cart'
 import { connect } from 'react-redux'
+import { setDropdownToggle } from '../redux/dropdown/func-dropdown'
 
 function Header({currentUser}, props) {
 
-    const [dropdownToggle, setDropdownToggle] = useState(false)
+    // const [dropdownToggle, setDropdownToggle] = useState(false)
 
     console.log(currentUser, props)
 
@@ -30,9 +31,9 @@ function Header({currentUser}, props) {
                     {!currentUser && <NavLink to="/signup" activeClassName="active-link" className="link">Sign Up</NavLink>}
                     {/* {currentUser && <AiOutlineShoppingCart className="link" style={{fontSize: '1.1rem'}} /> } */}
                     {/* {currentUser && <a className="link" onClick={() => props.signOut()}>Sign Out</a>} */}
-                    {currentUser && <UserSection user={currentUser} dropdownToggle={() => setDropdownToggle(!dropdownToggle)}></UserSection>}
+                    {currentUser && <UserSection user={currentUser} dropdownToggle={() => setDropdownToggle(true)}></UserSection>}
                     {!currentUser && <NavLink to="/sign" activeClassName="active-link" className="link">sign In</NavLink>}
-                    {dropdownToggle && <UserDropdown user={currentUser} signOut={props.signOut} dropdownToggle={()=> setDropdownToggle(!dropdownToggle)} />}
+                    {dropdownToggle && <UserDropdown user={currentUser} signOut={props.signOut} dropdownToggle={()=> setDropdownToggle()} />}
 
                 </div>
 

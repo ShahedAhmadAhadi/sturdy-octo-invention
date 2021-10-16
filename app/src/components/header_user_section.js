@@ -11,7 +11,7 @@ function UserSection(props) {
     let sliceDisplayName = props.user.displayName.slice(0, 6)
 
     return (
-        <div className="child" onClick={props.dropdownToggle}>
+        <div className="child" onClick={() => {}}>
             <span className="name-container">{sliceDisplayName}</span>
             <span className="image-container"><img src={props.user.photoURL} className="user-image" /></span>
             <span className="caret-container" ><FaCaretDown /></span>
