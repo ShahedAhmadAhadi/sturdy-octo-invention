@@ -16,7 +16,7 @@ function UserSection(props) {
 
     return (
         // <div className="child" onClick={() => {setDropdownToggle('DROPDOWN')}}>
-        <div className="child" onClick={() => {dispatch(setDropdownToggle(!dropdown))}}>
+        <div className="child" onClick={(e) => {dispatch(setDropdownToggle(!dropdown)); e.stopPropagation()}}>
             <span className="name-container">{sliceDisplayName}</span>
             <span className="image-container"><img src={props.user.photoURL} className="user-image" /></span>
             <span className="caret-container" ><FaCaretDown /></span>

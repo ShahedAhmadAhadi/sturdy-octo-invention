@@ -37,8 +37,8 @@ function Main(props) {
                 <button onClick={() => {dispatch(setTextState("NEW_TEXT", text)); setText('')}}>new send</button>
                 <span>{textState}</span>
             </div> */}
-            <DropdownPage />
-            <DropdownPage1 />
+            {/* <DropdownPage />
+            <DropdownPage1 /> */}
         </div>
     )
 }

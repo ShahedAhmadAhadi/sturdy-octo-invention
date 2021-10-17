@@ -50,7 +50,7 @@ export default class DropdownPage extends Component {
             this.state.dropdown2Visible &&
             <NativeClickListener
               listenInside={true}
-              onClick={()=>this.setState({dropdown2Visible: false})}>
+              onClick={()=>this.setState({dropdown2Visible: true})}>
               <div className='dropdown-body'>
                 <div>
                   <span>menu 1</span>

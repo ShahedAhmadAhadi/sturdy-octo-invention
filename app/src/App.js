@@ -11,11 +11,12 @@ import Header from './components/header';
 import SignUp from './components/signUp';
 import './components/styles/styles.css'
 import { setCurrentUser } from './redux/user/user-actions';
-import { connect, useSelector } from 'react-redux';
+import { connect, useSelector, useDispatch } from 'react-redux';
 import { setDropdownToggle, dropdownToggle} from './redux/dropdown/func-dropdown';
 
 
 function App(props) {
+  const dispatch = useDispatch()
 
   let history = useHistory();
   const dropdown = useSelector(dropdownToggle)
@@ -48,6 +49,7 @@ function App(props) {
       // setCurrentUser(user)
       // createUserProfileDocument(user)
     })
+    window.addEventListener('click', () => {dispatch(setDropdownToggle(false)); console.log('object')})
   }, [])
 
   const signOut = () => {
