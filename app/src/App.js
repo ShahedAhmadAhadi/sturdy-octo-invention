@@ -3,7 +3,7 @@ import './App.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { auth, createUserProfileDocument, getUsers, db } from './firebase/firebase.utils';
-import { onSnapshot } from '@firebase/firestore';
+import { increment, onSnapshot } from '@firebase/firestore';
 import { Route, Switch, BrowserRouter, useHistory, Redirect } from 'react-router-dom';
 import SignIn from './components/signIn';
 import Main from './components/main';
@@ -19,7 +19,6 @@ function App(props) {
   const dispatch = useDispatch()
 
   let history = useHistory();
-  const dropdown = useSelector(dropdownToggle)
 
   async function users(db) {
    const a = await getUsers(db)
@@ -49,9 +48,23 @@ function App(props) {
       // setCurrentUser(user)
       // createUserProfileDocument(user)
     })
-    window.addEventListener('click', () => {dispatch(setDropdownToggle(false)); console.log('object')})
   }, [])
+  // useEffect(() => {
+  //   const dropdown = useSelector(dropdownToggle)
+  //   console.log(dropdown, 'global')
+  //   if (dropdown) {
+  //     window.addEventListener('click', () => {dispatch(setDropdownToggle(false)); console.log('object')});
+  //   }
+  // }, [])
 
+
+  // const dropdown = useSelector(dropdownToggle)
+  // console.log(dropdown, 'global')
+  // window.addEventListener('click', () => {
+  //   if (dropdown) {
+  //     dispatch(setDropdownToggle(false)); console.log(dropdown);
+  //   }});
+  
   const signOut = () => {
     auth.signOut()
     setCurrentUser(null)
