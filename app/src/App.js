@@ -11,12 +11,15 @@ import Header from './components/header';
 import SignUp from './components/signUp';
 import './components/styles/styles.css'
 import { setCurrentUser } from './redux/user/user-actions';
+import { user } from './redux/user/user-reducer';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { setDropdownToggle, dropdownToggle} from './redux/dropdown/func-dropdown';
 
 
 function App(props) {
   const dispatch = useDispatch()
+  const cuser = useSelector(user)
+  console.log(cuser, 'cuser')
 
   let history = useHistory();
 
@@ -24,6 +27,7 @@ function App(props) {
    const a = await getUsers(db)
    return a
   }
+  
 
   const a = users(db)
   // console.log(a, 'asldjiiii')
@@ -31,14 +35,14 @@ function App(props) {
   // const [currentUser, setCurrentUser] = useState('')
   
   useEffect(() => {
-    const {setCurrentUser} = props
+    // const {setCurrentUser} = props
     auth.onAuthStateChanged(async userAuth => {
       // setCurrentUser(userAuth)
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         onSnapshot(userRef, (snapShot) => {
-          setCurrentUser({id:snapShot.id, ...snapShot.data()})
+          props.setCurrentUser({id:snapShot.id, ...snapShot.data()})
           history.push('/')
         })
         // userRef.(snapShot => {
@@ -60,10 +64,12 @@ function App(props) {
 
   // const dropdown = useSelector(dropdownToggle)
   // console.log(dropdown, 'global')
-  // window.addEventListener('click', () => {
-  //   if (dropdown) {
-  //     dispatch(setDropdownToggle(false)); console.log(dropdown);
-  //   }});
+  window.addEventListener('click', () => {
+    if (props.dropdown) {
+      console.log(props.dropdown)
+      dispatch(setDropdownToggle(false)); console.log('props');
+    }
+    });
   
   const signOut = () => {
     auth.signOut()
@@ -88,7 +94,7 @@ function App(props) {
         </a>
       </header> */}
         {/* <Header user={currentUser} signOut={() => signOut()} /> */}
-        <Header onClick={() => setDropdownToggle(false)} />
+        <Header />
         <Route exact path="/" component={Main} ></Route>
         <Route exact path="/sign" component={SignIn} ></Route>
         <Route exact path="/signup" render={() => {props.currentUser ? (<Redirect to="/" />) : (<SignUp />)}}></Route>
@@ -96,8 +102,9 @@ function App(props) {
   );
 }
 
-const mapStateToProps = ({user}) => ({
-  currentUser: user.currentUser
+const mapStateToProps = ({user, dropdown}) => ({
+  currentUser: user.currentUser,
+  dropdown: dropdown.drop
 })
 
 const mapDispatchToProps = dispatch => ({
