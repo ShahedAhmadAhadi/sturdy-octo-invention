@@ -82,8 +82,6 @@ function App(props) {
     if (drop) {
       dispatch(setDropdownToggle(false));
       console.log(props);
-    }else{
-      controller.abort()
     }
     // if (t2.firstChild.nodeValue == "three") {
     //   t2.firstChild.nodeValue = "two";
