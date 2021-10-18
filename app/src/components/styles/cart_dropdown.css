@@ -1,3 +1,12 @@
 .cart-dropdown{
     position: absolute;
+    top: 25px;
+    left: 0;
+    background: #fff;
+    border: 2px solid #777;
+    padding: 1em;
+}
+
+.cart-dropdown:hover{
+    background: linear-gradient(120deg, #4d63e0 10% 60%, #70f59c 60%);
 }
