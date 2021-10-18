@@ -15,7 +15,6 @@ import { user } from './redux/user/user-reducer';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { setDropdownToggle, dropdownToggle} from './redux/dropdown/func-dropdown';
 
-
 function App(props) {
   const dispatch = useDispatch()
   const cuser = useSelector(user)
@@ -64,12 +63,41 @@ function App(props) {
 
   // const dropdown = useSelector(dropdownToggle)
   // console.log(dropdown, 'global')
-  window.addEventListener('click', () => {
-    if (props.dropdown) {
-      console.log(props.dropdown)
-      dispatch(setDropdownToggle(false)); console.log('props');
+  // if (props.dropdown) {
+  //   window.addEventListener('click', () => {
+  //     dispatch(setDropdownToggle(false)); console.log(props.dropdown)
+  //   })
+  // }
+
+  // function handleFalseDropdown (dropdown) {
+  //   if (dropdown) {
+  //     console.log(dropdown)
+  //     dispatch(setDropdownToggle(false)); console.log('props');
+  //   }
+  // }
+  // window.addEventListener('click', handleFalseDropdown(props.dropdown))
+  window.addEventListener('click', () => modifyText(props.dropdown))
+  function modifyText(dropdown) {
+    let drop = props.dropdown
+    if (drop) {
+      dispatch(setDropdownToggle(false));
+      console.log(props);
+    }else{
+      controller.abort()
     }
-    });
+    // if (t2.firstChild.nodeValue == "three") {
+    //   t2.firstChild.nodeValue = "two";
+    // } else {
+    //   t2.firstChild.nodeValue = "three";
+    //   controller.abort(); // remove listener after value reaches "three"
+    // }
+  }
+  // window.addEventListener('click', function (props) {
+  //   if (props.dropdown) {
+  //     console.log(props.dropdown)
+  //     dispatch(setDropdownToggle(false)); console.log('props');
+  //   }
+  //   },);
   
   const signOut = () => {
     auth.signOut()
