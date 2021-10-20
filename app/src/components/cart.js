@@ -14,10 +14,13 @@ function Cart() {
 
     console.log(color)
     return (
-        <div className="cart-wrapper" onMouseEnter={() => hover('#840032')} onMouseLeave={() => hover('#e9dea2')}>
-            <FiShoppingCart className="cart" style={{color: color}} />
-            <div className="cart-items-num">0</div>
-            <CartDropdown />
+        <div className="cart-main">
+
+            <div className="cart-wrapper" onMouseEnter={() => hover('#840032')} onMouseLeave={() => hover('#e9dea2')}>
+                <FiShoppingCart className="cart" style={{color: color}} />
+                <div className="cart-items-num">0</div>
+            </div>
+                <CartDropdown />
         </div>
     )
 }

@@ -3,7 +3,7 @@ import './styles/cart_dropdown.css'
 
 function CartDropdown() {
     return (
-        <div className="cart-dropdown" onMouseOver={(e) => {e.stopPropagation()}} onMouseUp={(e) => {e.stopPropagation()}} onMouseEnter={(e) => {e.stopPropagation()}} onMouseUpCapture={(e) => {e.stopPropagation()}} onMouseOut={(e) => {e.stopPropagation()}}>
+        <div className="cart-dropdown" >
             CartDropdown
         </div>
     )
