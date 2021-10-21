@@ -10,21 +10,22 @@
     border-radius: 2px;
 }
 
-.cart-dropdown:hover{
+/* .cart-dropdown:hover{
     background: linear-gradient(120deg, #4d63e0 60%, #70f59c 60%);
+} */
+
+.cart-dropdown-left{
+    background: linear-gradient(#70f59cbb 22%, #4d63e0bb 22% 78%, #70f59cbb 78%);
+    border-right: 2px solid #777;
 }
 
-.cart-dropdown-right:hover{
-    background: linear-gradient(#70f59c 20%, #4d63e0 20% 80%, #70f59c 80%);
-}
-
-.cart-dropdown-right-text{
+.cart-dropdown-left-text{
     writing-mode: vertical-rl;
     text-orientation: upright;
     font-weight: 500;
 }
 
-.cart-dropdown-right-shape{
+.cart-dropdown-left-shape{
     writing-mode: vertical-rl;
     text-orientation: upright;
     font-weight: 500;
