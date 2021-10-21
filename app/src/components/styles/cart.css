@@ -6,13 +6,9 @@
     font-size: 1rem;
     width: 30px;
     height: 30px;
-    position: absolute;
     display: flex;
     align-items: center;
     border-radius: 50%;
-    /* left: 220px;
-    right: -5px;
-    top: -4px; */
 }
 
 .cart-wrapper:hover{
