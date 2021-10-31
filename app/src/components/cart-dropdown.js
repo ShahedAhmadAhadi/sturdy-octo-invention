@@ -4,12 +4,6 @@ import { FiArrowRight } from 'react-icons/fi'
 import {useState} from 'react'
 
 function CartDropdown() {
-    
-    const [color, setColor] = useState('#fff')
-
-    const hover = (value) => {
-        setColor(value)
-    }
 
     return (
         <div className="cart-dropdown" >
