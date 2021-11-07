@@ -1,5 +1,5 @@
 import React from 'react'
-import {child} from './styles/header_user_section.css'
+import { child } from './styles/header_user_section.css'
 import { FaCaretDown } from 'react-icons/fa'
 import UserDropdown from './user_func_dropdown'
 import { setDropdownToggle, dropdownToggle } from '../redux/dropdown/func-dropdown'
@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 function UserSection(props) {
     const dispatch = useDispatch()
-    const dropdown = useSelector( dropdownToggle)
+    const dropdown = useSelector(dropdownToggle)
 
     console.log(props)
 
@@ -16,7 +16,7 @@ function UserSection(props) {
 
     return (
         // <div className="child" onClick={() => {setDropdownToggle('DROPDOWN')}}>
-        <div className="child" onClick={(e) => {dispatch(setDropdownToggle(!dropdown)); e.stopPropagation()}}>
+        <div className="child" onClick={(e) => { dispatch(setDropdownToggle(!dropdown)); e.stopPropagation() }}>
             <span className="name-container">{sliceDisplayName}</span>
             <span className="image-container"><img src={props.user.photoURL} className="user-image" /></span>
             <span className="caret-container" ><FaCaretDown /></span>

@@ -30,5 +30,5 @@ export default function OutsideAlerter(props) {
     const wrapperRef = useRef(null);
     useOutsideAlerter(wrapperRef);
 
-    return <div ref={wrapperRef} style={{width: '40px', height: '40px', background:'#ee8'}}>{props.children}</div>;
+    return <div ref={wrapperRef} style={{ width: '40px', height: '40px', background: '#ee8' }}>{props.children}</div>;
 }
