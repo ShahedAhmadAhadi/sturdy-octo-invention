@@ -1,25 +1,18 @@
 import React from 'react'
 import './styles/cart_dropdown.css'
-import { FiArrowRight } from 'react-icons/fi'
+import { FiArrowRight, FiShoppingCart } from 'react-icons/fi'
+import { IoMdCart } from 'react-icons/io'
 import {useState} from 'react'
 
 function CartDropdown() {
 
     return (
         <div className="cart-dropdown" >
-            <div className="cart-dropdown-left" style={{padding: '0.1em 1em', width: '10%'}}>
-                <div className="cart-dropdown-left-shape">
-                    <FiArrowRight />
-                </div>
-                <div className="cart-dropdown-left-text" style={{color: '#fff'}}>
-                    Items
-                </div>
-                <div className="cart-dropdown-left-shape">
-                    <FiArrowRight />
-                </div>
+            <div className="cart-dropdown-left" style={{padding: '1em'}}>
+                    <IoMdCart />
             </div>
-            <div className="cart-dropdown-right">
-                
+            <div className="cart-dropdown-right" style={{padding: '1em 1em'}}>
+                items
             </div>
         </div>
     )
