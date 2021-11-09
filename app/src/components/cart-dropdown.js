@@ -2,16 +2,16 @@ import React from 'react'
 import './styles/cart_dropdown.css'
 import { FiArrowRight, FiShoppingCart } from 'react-icons/fi'
 import { AiOutlineShopping } from 'react-icons/ai'
-import {useState} from 'react'
+import { useState } from 'react'
 
 function CartDropdown() {
 
     return (
         <div className="cart-dropdown" >
-            <div className="cart-dropdown-left" style={{padding: '1em'}}>
-                    <AiOutlineShopping />
+            <div className="cart-dropdown-left" style={{ padding: '0.1em', fontSize: '2em', justifySelf: 'left' }}>
+                <AiOutlineShopping />
             </div>
-            <div className="cart-dropdown-right" style={{padding: '1em 1em'}}>
+            <div className="cart-dropdown-right" style={{ padding: '1em 1em' }}>
                 items
             </div>
         </div>

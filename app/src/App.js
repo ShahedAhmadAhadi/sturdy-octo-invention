@@ -13,7 +13,7 @@ import './components/styles/styles.css'
 import { setCurrentUser } from './redux/user/user-actions';
 import { user } from './redux/user/user-reducer';
 import { connect, useSelector, useDispatch } from 'react-redux';
-import { setDropdownToggle, dropdownToggle} from './redux/dropdown/func-dropdown';
+import { setDropdownToggle, dropdownToggle } from './redux/dropdown/func-dropdown';
 
 function App(props) {
   const dispatch = useDispatch()
@@ -23,16 +23,16 @@ function App(props) {
   let history = useHistory();
 
   async function users(db) {
-   const a = await getUsers(db)
-   return a
+    const a = await getUsers(db)
+    return a
   }
-  
+
 
   const a = users(db)
   // console.log(a, 'asldjiiii')
 
   // const [currentUser, setCurrentUser] = useState('')
-  
+
   useEffect(() => {
     // const {setCurrentUser} = props
     auth.onAuthStateChanged(async userAuth => {
@@ -41,7 +41,7 @@ function App(props) {
         const userRef = await createUserProfileDocument(userAuth);
 
         onSnapshot(userRef, (snapShot) => {
-          props.setCurrentUser({id:snapShot.id, ...snapShot.data()})
+          props.setCurrentUser({ id: snapShot.id, ...snapShot.data() })
           history.push('/')
         })
         // userRef.(snapShot => {
@@ -96,7 +96,7 @@ function App(props) {
   //     dispatch(setDropdownToggle(false)); console.log('props');
   //   }
   //   },);
-  
+
   const signOut = () => {
     auth.signOut()
     setCurrentUser(null)
@@ -119,16 +119,16 @@ function App(props) {
           Learn React
         </a>
       </header> */}
-        {/* <Header user={currentUser} signOut={() => signOut()} /> */}
-        <Header />
-        <Route exact path="/" component={Main} ></Route>
-        <Route exact path="/sign" component={SignIn} ></Route>
-        <Route exact path="/signup" render={() => {props.currentUser ? (<Redirect to="/" />) : (<SignUp />)}}></Route>
+      {/* <Header user={currentUser} signOut={() => signOut()} /> */}
+      <Header />
+      <Route exact path="/" component={Main} ></Route>
+      <Route exact path="/sign" component={SignIn} ></Route>
+      <Route exact path="/signup" render={() => { props.currentUser ? (<Redirect to="/" />) : (<SignUp />) }}></Route>
     </div>
   );
 }
 
-const mapStateToProps = ({user, dropdown}) => ({
+const mapStateToProps = ({ user, dropdown }) => ({
   currentUser: user.currentUser,
   dropdown: dropdown.drop
 })
