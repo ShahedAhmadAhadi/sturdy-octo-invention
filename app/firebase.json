@@ -18,6 +18,12 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   },
   "storage": {
@@ -50,6 +56,6 @@
     }
   },
   "remoteconfig": {
-    "template": "]"
+    "template": "remoteconfig.template.json"
   }
 }
